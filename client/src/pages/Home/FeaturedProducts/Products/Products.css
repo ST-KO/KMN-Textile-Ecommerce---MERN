@@ -1,0 +1,128 @@
+#product1{
+    text-align: center;
+}
+
+#product1 .pro-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+    animation: fadeIn 3s;
+}
+
+#product1 .pro{
+    width: 27%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+    margin: 15px 0px;
+    transition: box-shadow 0.2s ease;
+    position: relative;
+}
+
+#product1 .pro:hover{
+  border: 1px solid #ebe3f3;
+  box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.5);
+}
+
+#product1 .pro .product-img{
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product1 .pro .product-img-container{
+position: relative;
+}
+
+.product-img-container .add{
+  width: 45px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.product-img-container .product-item-counter{
+  position: absolute;
+  bottom: 15px;
+  right: 1px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px;
+  border-radius: 50px;
+  
+  background-color: white;
+  height: 50px;
+  width: 115px;
+  padding-top: 15px;
+}
+
+.product-item-counter img{
+  padding-bottom: 10px;
+}
+
+.product-item-counter p{
+  font-weight: 600;
+}
+
+#product1 .pro .description{
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .description span{
+    color: #606060;
+    font-size: 12px;
+  }
+  
+  #product1 .pro .description h5{
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+  }
+  
+  #product1 .pro .description .star{
+    padding-top: 5px;
+    color: rgb(243, 181, 25);
+  }
+  
+  #product1 .pro .description .star .icon{
+    padding-right: 5px;
+    font-size: 20px;
+  }
+  
+  #product1 .pro .description h4{
+    padding-top: 7px;
+    color: #8c52b3;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  
+  #product1 .pro .cart{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    /* background-color: #eee8f6; */
+    font-weight: 500;
+    /* color: #8c52b3; */
+    color: black;
+    border-color: 1px solid #8c52b3;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    padding: 5px;
+  
+    transition: transform 0.5s ease;
+  }
+  
+  #product1 .pro .cart:hover{
+    transform: translateY(-10px);
+    color: #ca47f3;
+  }

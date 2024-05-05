@@ -1,0 +1,63 @@
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    color: #222;
+}
+
+footer .link{
+    font-size: 13px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow .icon{
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer .install .row img{
+    border: 1px solid #b73ebd;
+    border-radius: 6px;
+}
+
+footer .install img{
+    margin: 10px 5px 15px 0;
+}
+
+footer .follow .icon:hover,
+footer .link:hover{
+    color: #d654a7;
+
+    background-image: linear-gradient(45deg, #d25175, #663ebd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}

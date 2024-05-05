@@ -1,0 +1,53 @@
+#sm-banner{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#sm-banner .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    background-image: url("/public/image/banner/b12.png");
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    padding: 30px 120px;
+    
+}
+
+#sm-banner h4{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  
+  #sm-banner h2{
+    color: #d25175;
+    font-size: 28px;
+    font-weight: 800;
+  }
+  
+  #sm-banner h3{
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+  }
+  
+  #sm-banner h3 span{
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 800;
+    font-size: 25px;
+  
+    background-image: linear-gradient(45deg, #d25175, #663ebd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  #sm-banner .banner-box button:hover{
+    background: #d654a7;
+    border: 1px solid #d654a7;
+  }

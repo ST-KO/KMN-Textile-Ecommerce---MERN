@@ -1,0 +1,19 @@
+#about-head{
+    display: flex;
+    align-items: center;
+}
+  
+#about-head img{
+    width: 50%;
+    height: auto;
+}
+  
+#about-head .paragraph{
+    padding-left: 40px;
+}
+  
+#about-head marquee{
+    background-color: rgba(171, 85, 221, 0.467);
+    width: 100%;
+    text-align: center;
+}

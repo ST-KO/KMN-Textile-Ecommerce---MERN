@@ -1,0 +1,39 @@
+#hero{
+    background-image: url("/image/IMG.JPG");
+
+    height: 90vh;
+    background-size: cover;
+    background-position: top 5% left 0%;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    animation: fadeIn 3s;
+}
+
+#hero h4{
+    padding-bottom: 15px;
+}
+
+#hero h1{
+    color: #8c52b3;
+
+    background-image: linear-gradient(45deg, #d25175, #663ebd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero button{
+    background-image: url("/image/button.png");
+
+    background-color: transparent;
+    color: #ca47f3;
+    border: none;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+}
