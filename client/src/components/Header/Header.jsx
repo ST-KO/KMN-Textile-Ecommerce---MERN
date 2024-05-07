@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaShoppingBag } from "react-icons/fa";
+import { SlHandbag } from "react-icons/sl";
+import { CgProfile } from "react-icons/cg";
+import { LuLogOut } from "react-icons/lu";
+
+import { StoreContext } from '../../Context/StoreContext';
 import './Header.css';
 
 const Header = ({ setShowLogin }) => {
   
     const { pathname } = useLocation();
+
+    const { token, setToken } = useContext(StoreContext);
 
     return (
     <header id="header">
@@ -29,8 +36,26 @@ const Header = ({ setShowLogin }) => {
                     <FaShoppingBag />
                 </Link>
                 <div className='dot'></div>
-            </div>      
-            <button onClick={() => setShowLogin(true)}>Sign In</button>
+            </div>
+            {
+                !token ? 
+                <button onClick={() => setShowLogin(true)}>Sign In</button> :
+                <div className='navbar-profile'>
+                    <CgProfile className='navbar-profile-icon' />
+                    <ul className='nav-profile-dropdown'>
+                        <li>
+                            <SlHandbag className='dropdown-icon' />
+                            <p>Orders</p>
+                        </li>
+                        <hr />
+                        <li>
+                            <LuLogOut className='dropdown-icon' /> 
+                            <p>Logout</p>
+                        </li>
+                    </ul>
+                </div>
+            }      
+            
         </nav>
     </header>
   );

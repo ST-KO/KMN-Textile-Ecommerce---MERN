@@ -42,14 +42,31 @@ const getAllProducts = async (req, res) => {
   }
 };
 
+// Get Single Product Item
+const getSingleProduct = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await productModel.findById(id);
+    res.status(200).json({
+      success: true,
+      data: product,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 // Remove Product
 const removeProduct = async (req, res) => {
   try {
-    const product = await productModel.findById(req.body.id);
+    const { id } = req.params;
+
+    const product = await productModel.findById(id);
 
     fs.unlink(`uploads/${product.image}`, () => {});
 
-    await productModel.findByIdAndDelete(req.body.id);
+    await productModel.findByIdAndDelete(id);
 
     res
       .status(200)
@@ -65,14 +82,16 @@ const updateProduct = async (req, res) => {
   const newImageFilename = `${req.file.filename}`;
 
   try {
-    const existingProduct = await productModel.findById(req.body.id);
+    const { id } = req.params;
+
+    const existingProduct = await productModel.findById(id);
 
     // Delete the old image file
     fs.unlink(`uploads/${existingProduct.image}`, () => {});
 
     // Update the product with new data
     const updatedProduct = await productModel.findByIdAndUpdate(
-      req.body.id,
+      id,
       {
         brand: req.body.brand,
         name: req.body.name,
@@ -94,4 +113,10 @@ const updateProduct = async (req, res) => {
   }
 };
 
-export { createNewProducts, getAllProducts, removeProduct, updateProduct };
+export {
+  createNewProducts,
+  getAllProducts,
+  getSingleProduct,
+  removeProduct,
+  updateProduct,
+};

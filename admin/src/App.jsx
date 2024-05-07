@@ -9,6 +9,8 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Add from './pages/Add/Add';
 import List from './pages/List/List';
 import Orders from './pages/Orders/Orders';
+import Delete from './pages/Delete/Delete';
+import Edit from './pages/Edit/Edit';
 
 const App = () => {
   
@@ -18,17 +20,15 @@ const App = () => {
   return (
     <>
       <ToastContainer />
-      <Navbar />
-      <hr />
-  
-      <div className='app-content'>
-        <Sidebar />
-        <Routes>
-          <Route path='/add' element={<Add serverURL={serverURL} />} />
-          <Route path='/list' element={<List serverURL={serverURL} />} />
-          <Route path='/orders' element={<Orders serverURL={serverURL} />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          <Route path='add' element={<Add serverURL={serverURL} />} />
+          <Route path='list' element={<List serverURL={serverURL} />} />
+          <Route path='delete/:id' element={<Delete serverURL={serverURL} />} />
+          <Route path='/edit/:id' element={<Edit serverURL={serverURL} />} />
+          <Route path='orders' element={<Orders serverURL={serverURL} />} />
+        </Route>
+      </Routes>
     </>
   );
 };

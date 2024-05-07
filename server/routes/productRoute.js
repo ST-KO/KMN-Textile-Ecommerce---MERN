@@ -3,6 +3,7 @@ import multer from "multer";
 import {
   createNewProducts,
   getAllProducts,
+  getSingleProduct,
   removeProduct,
   updateProduct,
 } from "../controller/productController.js";
@@ -25,8 +26,10 @@ productRouter.post("/create", upload.single("image"), createNewProducts);
 
 productRouter.get("/list", getAllProducts);
 
-productRouter.post("/remove", removeProduct);
+productRouter.get("/list/:id", getSingleProduct);
 
-productRouter.patch("/update", upload.single("image"), updateProduct);
+productRouter.delete("/remove/:id", removeProduct);
+
+productRouter.patch("/edit/:id", upload.single("image"), updateProduct);
 
 export default productRouter;

@@ -33,6 +33,16 @@ hr{
   gap: 10px;
 }
 
+.cursor-container{
+  display: flex;
+  gap: 20px;
+}
+
 .cursor{
   cursor: pointer;
+  font-size: max(1.2vw, 20px);
+}
+
+.cursor:hover{
+  color: #d654a7;
 }

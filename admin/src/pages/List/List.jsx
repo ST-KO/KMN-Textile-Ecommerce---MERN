@@ -5,9 +5,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
+import { AiOutlineEdit } from 'react-icons/ai';
+import { MdOutlineDelete } from 'react-icons/md';
 
 const List = ({ serverURL }) => {
-  
 
   const [list, setList] = useState([]);
 
@@ -59,7 +61,14 @@ const List = ({ serverURL }) => {
                 <p>{item?.name}</p>
                 <p>{item?.category}</p>
                 <p>{item?.price} MMK</p>
-                <p onClick={() => removeList(item._id)} className='cursor'>X</p>
+                <div className='cursor-container'>
+                  <Link to={`/edit/${item._id}`} className='cursor'>
+                    <AiOutlineEdit />
+                  </Link>
+                  <Link to={`/delete/${item._id}`} className='cursor'>
+                    <MdOutlineDelete />
+                  </Link>
+                </div>
               </div>
             );
           })
