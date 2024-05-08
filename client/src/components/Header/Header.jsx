@@ -13,7 +13,7 @@ const Header = ({ setShowLogin }) => {
     const navigate = useNavigate();
     const { pathname } = useLocation();
 
-    const { token, setToken } = useContext(StoreContext);
+    const { token, setToken, getTotalAmount } = useContext(StoreContext);
 
     const logOut = () => {
         localStorage.removeItem("token");
@@ -42,7 +42,7 @@ const Header = ({ setShowLogin }) => {
                 <Link to="/cart" className={pathname === '/cart' ? 'active navlink' : 'navlink'}>
                     <FaShoppingBag />
                 </Link>
-                <div className='dot'></div>
+                <div className={getTotalAmount() > 0 ? 'dot' : ""}></div>
             </div>
             {
                 !token ? 

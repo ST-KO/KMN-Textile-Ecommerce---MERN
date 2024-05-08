@@ -1,9 +1,9 @@
 import React from 'react';
-
-import './CheckOut.css';
 import { useNavigate } from 'react-router-dom';
 
-const CheckOut = () => {
+import './CheckOut.css';
+
+const CheckOut = ({getTotalAmount}) => {
   
     const navigate = useNavigate();
   
@@ -23,15 +23,15 @@ const CheckOut = () => {
                     <tbody>
                         <tr>
                             <td>Cart Subtotal</td>
-                            <td>80,000 MMK</td>
+                            <td>{getTotalAmount} MMK</td>
                         </tr>
                         <tr>
                             <td>Shipping</td>
-                            <td>Free</td>
+                            <td>0 MMK</td>
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td>80,000 MMK</td>
+                            <td>{getTotalAmount} MMK</td>
                         </tr>
                     </tbody>
                 </table>

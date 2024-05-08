@@ -7,7 +7,7 @@ import { StoreContext } from '../../../Context/StoreContext';
 
 const ProductList = () => {
   
-    const { serverURL, productList } = useContext(StoreContext);
+    const { serverURL, productList, cartItems, removeFromCart } = useContext(StoreContext);
   
     return (
     <section id='cart' className='section-p1'>
@@ -25,15 +25,21 @@ const ProductList = () => {
             <tbody>
                 {
                     productList.map((item, index) => {
+                        
                         return (
+                            cartItems[item._id] > 0 &&
                             <tr key={index}>
-                                <td><RxCrossCircled className='icon' /></td>
+                                <td>
+                                    <button className='icon' onClick={() => removeFromCart(item._id)}>
+                                        <RxCrossCircled />
+                                    </button>
+                                </td>
                                 <td><img src={`${serverURL}/images/${item.image}`} alt="product" /></td>
                                 <td>{item.brand}</td>
                                 <td>{item.price} MMK</td>
-                                <td>1</td>
-                                <td>{item.price} MMK</td>
-                            </tr>
+                                <td>{cartItems[item._id]}</td>
+                                <td>{item.price * cartItems[item._id]} MMK</td>
+                            </tr> 
                         )
                     })
                 }
