@@ -34,7 +34,7 @@ const Delete = ({ serverURL }) => {
     const onSubmitHandler = async () => {
         const response = await axios.delete(`${serverURL}api/product/remove/${id}`);
       
-        navigate('/list');
+        navigate('/dashboard/list');
     
         if(response.data.success){
             
@@ -61,13 +61,12 @@ const Delete = ({ serverURL }) => {
     return (
         <section className='add'>
             <form className='flex-col'>
-                <Link to={`/list`} className='login_back_icons'>
+                <Link to="/dashboard/list" className='login_back_icons'>
                         <BsArrowLeft/>
                         <h4>Back to Product List</h4>
                 </Link>
+                <h2>Are You Sure You Want To Delete This?</h2>
                 <div className="add-img-upload flex-col">
-                    
-                    <h2>Are You Sure You Want To Delete This?</h2>
                     <p>Uploaded Image</p>
                     <label htmlFor="image">
                         <img src={data?.image ? `${serverURL}images/${data?.image}` : assets.upload_area} alt="image" />

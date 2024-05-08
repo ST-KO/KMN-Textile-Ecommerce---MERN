@@ -3,7 +3,13 @@ import fs from "fs";
 
 // Create Product Items
 const createNewProducts = async (req, res) => {
-  let image_filename = `${req.file.filename}`;
+  let image_filename;
+
+  if (req.file) {
+    image_filename = `${req.file.filename}`;
+  } else {
+    image_filename = "";
+  }
 
   const product = new productModel({
     brand: req.body.brand,
@@ -79,15 +85,22 @@ const removeProduct = async (req, res) => {
 
 // Update Existing Product
 const updateProduct = async (req, res) => {
-  const newImageFilename = `${req.file.filename}`;
-
   try {
     const { id } = req.params;
 
     const existingProduct = await productModel.findById(id);
 
-    // Delete the old image file
-    fs.unlink(`uploads/${existingProduct.image}`, () => {});
+    const oldImageFile = existingProduct.image;
+
+    let newImageFile;
+    if (req.file) {
+      newImageFile = req.file.filename;
+
+      // Delete the old image file
+      fs.unlink(`uploads/${existingProduct.image}`, () => {});
+    } else {
+      newImageFile = oldImageFile;
+    }
 
     // Update the product with new data
     const updatedProduct = await productModel.findByIdAndUpdate(
@@ -98,7 +111,7 @@ const updateProduct = async (req, res) => {
         description: req.body.description,
         price: req.body.price,
         category: req.body.category,
-        image: newImageFilename,
+        image: newImageFile,
       },
       { new: true }
     );

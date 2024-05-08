@@ -1,13 +1,29 @@
 import React from 'react';
-import { assets } from '../../assets/assets'
+import { useNavigate } from 'react-router-dom';
 
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ token, setToken }) => {
+  
+  const navigate = useNavigate();
+
+  const signOutHandler = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/");
+  };
+  
   return (
     <section className='navbar'>
-        <img className='logo' src={assets.logo} alt="" />
-        <img className='profile' src={assets.profile_image} alt="" />
+        <div className='logo-container'>
+          <a className="logo" href="#">Khit Myat Noe</a>
+          <p>Admin Panel</p>
+        </div>
+        <button onClick={signOutHandler}>
+          {
+            token ? "Sign Out" : "Sign In"
+          }
+        </button>
     </section>
   );
 };

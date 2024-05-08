@@ -29,20 +29,20 @@ const TrendingNow = () => {
                                 !itemCount ?
                                 <img 
                                     onClick={itemIncrease}
-                                    src="/public/image/add_icon_white.png" 
+                                    src="/image/add_icon_white.png" 
                                     alt="add icon"
                                     className='add' 
                                 /> :
                                 <div className='product-item-counter'>
                                     <img 
                                         onClick={itemDecrease} 
-                                        src="/public/image/remove_icon_red.png" 
+                                        src="/image/remove_icon_red.png" 
                                         alt="remove icon" 
                                     />
                                     <p>{itemCount}</p>
                                     <img 
                                         onClick={itemIncrease}
-                                        src="/public/image/add_icon_green.png" 
+                                        src="/image/add_icon_green.png" 
                                         alt="add icon" 
                                     />
                                 </div>

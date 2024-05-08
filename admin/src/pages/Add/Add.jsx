@@ -56,7 +56,7 @@ const Add = ({ serverURL }) => {
 
             toast.success(response.data.message);
 
-            navigate('/list');
+            navigate('/dashboard/list');
         } else {
             toast.error(response.data.message);
         }
@@ -145,6 +145,7 @@ const Add = ({ serverURL }) => {
             setImage={setImage}
             data={data} 
             buttonName={'ADD'}
+            title={"Creating Product"}
         />
     );
 };

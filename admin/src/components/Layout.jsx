@@ -4,10 +4,10 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
 import Sidebar from './Sidebar/Sidebar';
 
-const Layout = () => {
+const Layout = ({ token, setToken }) => {
   return (
     <>
-        <Navbar />
+        <Navbar token={token} setToken={setToken} />
         <hr />
         <div className='app-content'>
             <Sidebar />

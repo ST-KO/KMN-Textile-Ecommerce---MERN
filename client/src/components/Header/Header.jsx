@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaShoppingBag } from "react-icons/fa";
 import { SlHandbag } from "react-icons/sl";
 import { CgProfile } from "react-icons/cg";
@@ -9,10 +9,17 @@ import { StoreContext } from '../../Context/StoreContext';
 import './Header.css';
 
 const Header = ({ setShowLogin }) => {
-  
+    
+    const navigate = useNavigate();
     const { pathname } = useLocation();
 
     const { token, setToken } = useContext(StoreContext);
+
+    const logOut = () => {
+        localStorage.removeItem("token");
+        setToken("");
+        navigate("/");
+    };
 
     return (
     <header id="header">
@@ -48,7 +55,7 @@ const Header = ({ setShowLogin }) => {
                             <p>Orders</p>
                         </li>
                         <hr />
-                        <li>
+                        <li onClick={logOut}>
                             <LuLogOut className='dropdown-icon' /> 
                             <p>Logout</p>
                         </li>

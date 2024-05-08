@@ -2,9 +2,14 @@ import React from 'react';
 import { RxCrossCircled } from "react-icons/rx";
 
 import './ProductList.css';
+import { useContext } from 'react';
+import { StoreContext } from '../../../Context/StoreContext';
 
 const ProductList = () => {
-  return (
+  
+    const { serverURL, productList } = useContext(StoreContext);
+  
+    return (
     <section id='cart' className='section-p1'>
         <table>
             <thead>
@@ -18,14 +23,20 @@ const ProductList = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><RxCrossCircled className='icon' /></td>
-                    <td><img src="image/products/p1.JPG" alt="product" /></td>
-                    <td>Shwe Loom Chate</td>
-                    <td>40,000 MMK</td>
-                    <td>1</td>
-                    <td>40,000 MMK</td>
-                </tr>
+                {
+                    productList.map((item, index) => {
+                        return (
+                            <tr key={index}>
+                                <td><RxCrossCircled className='icon' /></td>
+                                <td><img src={`${serverURL}/images/${item.image}`} alt="product" /></td>
+                                <td>{item.brand}</td>
+                                <td>{item.price} MMK</td>
+                                <td>1</td>
+                                <td>{item.price} MMK</td>
+                            </tr>
+                        )
+                    })
+                }
             </tbody>
         </table>
     </section>

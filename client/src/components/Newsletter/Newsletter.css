@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     align-items: center;
   
-    background-image: url("/public/image/banner/b14.png");
+    background-image: url("/image/banner/b14.png");
     background-position: 20% 30%; /* from top from left */
     background-color: #222;
   }

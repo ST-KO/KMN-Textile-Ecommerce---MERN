@@ -14,13 +14,13 @@ const Form = ({
     setImage = defaultFunction, 
     data,
     buttonName,
-    component = "" 
+    title
 }) => {
     
     return (
         <section className='add'>
             <form className='flex-col' onSubmit={onSubmitHandler}>
-                
+                <h2>{title}</h2>
                 <div className="add-img-upload flex-col">
                     <p>Upload Image</p>
                     <label htmlFor="image">
@@ -30,17 +30,12 @@ const Form = ({
                             <img src={imageURL ? imageURL : assets.upload_area} alt="product image" /> 
                     
                         }
-                       
                     </label>
-                    {
-                        component === 'delete' ?
-                        <></> :
-                        <input 
+                    <input 
                         onChange={(e) => setImage(e.target.files[0])} 
                         type="file" 
-                        id='image' hidden required 
+                        id='image' hidden  
                     />
-                    }
                 </div>
 
                 <div className='add-product-brand flex-col'>

@@ -2,6 +2,11 @@
     overflow-x: auto;
 }
 
+#cart .icon{
+    font-size: 20px;
+    cursor: pointer;
+}
+
 #cart table{
     width: 100%;
     border-collapse: collapse;

@@ -62,10 +62,10 @@ const List = ({ serverURL }) => {
                 <p>{item?.category}</p>
                 <p>{item?.price} MMK</p>
                 <div className='cursor-container'>
-                  <Link to={`/edit/${item._id}`} className='cursor'>
+                  <Link to={`edit/${item._id}`} className='cursor'>
                     <AiOutlineEdit />
                   </Link>
-                  <Link to={`/delete/${item._id}`} className='cursor'>
+                  <Link to={`delete/${item._id}`} className='cursor'>
                     <MdOutlineDelete />
                   </Link>
                 </div>

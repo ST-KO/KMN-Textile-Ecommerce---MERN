@@ -20,13 +20,18 @@ const Edit = ({ serverURL }) => {
     image: ""
   });
 
-  console.log(data)
-
   const fetchProduct = async() => {
     const response = await axios.get(`${serverURL}api/product/list/${id}`);
 
     if(response.data.success){
-      setData(response.data.data);
+      setData({
+        brand: response.data.data.brand,
+        name: response.data.data.name,
+        description: response.data.data.descrition,
+        price: response.data.data.price,
+        category: response.data.data.category,
+        image: response.data.data.image
+      });
     } else {
       toast.error(response.data.message);
     }
@@ -67,7 +72,7 @@ const Edit = ({ serverURL }) => {
       });
       setImage(false);
       toast.success(response.data.message);
-      navigate('/list');
+      navigate('/dashboard/list');
     } else {
       toast.error(response.data.message);
     }
@@ -81,12 +86,13 @@ const Edit = ({ serverURL }) => {
   return (
     <Form 
       image={image} 
-      imageURL={`${serverURL}images/${data?.image}`}
+      imageURL={data.image && `${serverURL}images/${data?.image}`}
       onChangeHandler={onChangeHandler} 
       onSubmitHandler={onSubmitHandler}
       setImage={setImage}
       data={data}
-      buttonName={'EDIT'} 
+      buttonName={'EDIT'}
+      title={"Editing Product"} 
     />
   );
 };

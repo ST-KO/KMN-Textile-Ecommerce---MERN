@@ -20,18 +20,20 @@ const CheckOut = () => {
             <div id='subtotal'>
                 <h3>Cart Total</h3>
                 <table>
-                    <tr>
-                        <td>Cart Subtotal</td>
-                        <td>80,000 MMK</td>
-                    </tr>
-                    <tr>
-                        <td>Shipping</td>
-                        <td>Free</td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td>80,000 MMK</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Cart Subtotal</td>
+                            <td>80,000 MMK</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>80,000 MMK</td>
+                        </tr>
+                    </tbody>
                 </table>
                 <button onClick={() => navigate('/order')} className='normal'>PROCEED TO CHECKOUT</button>
             </div>

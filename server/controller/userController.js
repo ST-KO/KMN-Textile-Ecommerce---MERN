@@ -3,6 +3,11 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import validator from "validator";
 
+// Creating Token
+const createToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET);
+};
+
 // User Login
 const userLogin = async (req, res) => {
   const { email, password } = req.body;
@@ -33,11 +38,6 @@ const userLogin = async (req, res) => {
     console.log(error);
     res.status(500).json({ success: false, message: error.message });
   }
-};
-
-// Creating Token
-const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET);
 };
 
 // User Sign Up

@@ -4,6 +4,8 @@ import cors from "cors";
 import { connectDB } from "./config/db.js";
 import productRouter from "./routes/productRoute.js";
 import userRouter from "./routes/userRoute.js";
+import adminRouter from "./routes/adminRoute.js";
+import cartRouter from "./routes/cartRoute.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -12,6 +14,7 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 app.use("/images", express.static("uploads"));
+app.use(express.urlencoded({ extended: false }));
 
 // DB Connection
 connectDB();
@@ -19,6 +22,8 @@ connectDB();
 // API Endpoints
 app.use("/api/product", productRouter);
 app.use("/api/user", userRouter);
+app.use("/api/admin", adminRouter);
+app.use("/api/cart", cartRouter);
 
 app.get("/", async (req, res) => {
   try {
