@@ -9,9 +9,9 @@ import {
 
 const cartRouter = express.Router();
 
-cartRouter.put("/add", authMiddleware, addToCart);
+cartRouter.patch("/add", authMiddleware, addToCart);
 
-cartRouter.put("/remove", authMiddleware, removeFromCart);
+cartRouter.patch("/remove", authMiddleware, removeFromCart);
 
 cartRouter.get("/get", authMiddleware, getCart);
 

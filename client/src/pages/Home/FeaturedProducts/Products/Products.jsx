@@ -13,9 +13,9 @@ const Products = () => {
 
     const ShowProducts = () => {
         return (
-            productList.map((item, index) => {
+            productList.map((item) => {
                 return(
-                    <div key={index} className='pro'>
+                    <div key={item._id} className='pro'>
                         <div className='product-img-container'>
                             <img className='product-img' src={`${serverURL}/images/${item.image}`} alt="featured product" />
                             {
@@ -33,6 +33,7 @@ const Products = () => {
                                         alt="remove icon" 
                                     />
                                     <p>{cartItems[item._id]}</p>
+                                    {/* <p>{cartItems[item._id]}</p> */}
                                     <img 
                                         onClick={() => addToCart(item._id)}
                                         src="/image/add_icon_green.png" 
