@@ -36,9 +36,9 @@ const ProductList = () => {
                                 </td>
                                 <td><img src={`${serverURL}/images/${item.image}`} alt="product" /></td>
                                 <td>{item.brand}</td>
-                                <td>{item.price} MMK</td>
+                                <td>${item.price}</td>
                                 <td>{cartItems[item._id]}</td>
-                                <td>{item.price * cartItems[item._id]} MMK</td>
+                                <td>${item.price * cartItems[item._id]}</td>
                             </tr> 
                         )
                     })

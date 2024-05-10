@@ -55,7 +55,7 @@ const MyOrders = () => {
                                             )
                                     })}
                                 </div>
-                                <p>{order.amount}.00 AUD</p>
+                                <p>${order.amount}.00</p>
                                 <p>Total Items: {order.items.length}</p>
                                 <p><span>&#x25cf;</span> <b>{order.status}</b></p>
                                 <button onClick={trackOrderButtonHandler}>Update Status</button>

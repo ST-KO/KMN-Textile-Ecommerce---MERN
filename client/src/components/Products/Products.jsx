@@ -1,19 +1,22 @@
-import React, { useContext, useState } from 'react';
-import { StoreContext } from '../../../../Context/StoreContext';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'; 
 import { FaStar } from "react-icons/fa";
 import { BsCart2 } from "react-icons/bs";
-import product_list  from '../../../../assets/data';
+import product_list  from '../../assets/data';
+
+import { StoreContext } from '../../Context/StoreContext';
 
 import './Products.css';
 
-const Products = () => {
+const Products = ({ products }) => {
     
     const { serverURL, productList, cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
+    // const products = productList.filter(item => item.category === "Features")
+    
     const ShowProducts = () => {
         return (
-            productList.map((item) => {
+            products.map((item) => {
                 return(
                     <div key={item._id} className='pro'>
                         <div className='product-img-container'>
@@ -52,7 +55,7 @@ const Products = () => {
                                 <FaStar className='icon'/>
                                 <FaStar className='icon'/>
                             </div>
-                            <h4>{item.price} MMK</h4>
+                            <h4>${item.price}</h4>
                         </div>
                     </div>
                 );

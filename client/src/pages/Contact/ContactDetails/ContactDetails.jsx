@@ -32,7 +32,7 @@ const ContactDetails = () => {
 
         <div className='map'>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15279.80410405047!2d96.14402586318758!3d16.779111988342414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ec821e07a833%3A0xdde741e3cd511209!2sJunction%20City!5e0!3m2!1sen!2sau!4v1714216262098!5m2!1sen!2sau" 
-            frameborder="0"
+            frameBorder="0"
             width="600"
             height="450"
             allowFullScreen=""

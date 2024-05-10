@@ -76,9 +76,10 @@ const Form = ({
                 <div className="add-category-price">
                     <div className='add-category flex-col'>
                         <p>Product Category</p>
-                        <select onChange={onChangeHandler} name="category">
-                            <option value="Chate">Chate</option>
-                            <option value="Longyi">Longyi</option>
+                        <select onChange={onChangeHandler} name="category" value={data.category}>
+                            <option value="Normal">Normal</option>
+                            <option value="Trending">Trending</option>
+                            <option value="Features">Features</option>
                         </select>
                     </div>
 

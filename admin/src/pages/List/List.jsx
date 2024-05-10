@@ -48,7 +48,7 @@ const List = ({ serverURL }) => {
                 <p>{item?.brand}</p>
                 <p>{item?.name}</p>
                 <p>{item?.category}</p>
-                <p>{item?.price} MMK</p>
+                <p>${item?.price}</p>
                 <div className='cursor-container'>
                   <Link to={`edit/${item._id}`} className='cursor'>
                     <AiOutlineEdit />

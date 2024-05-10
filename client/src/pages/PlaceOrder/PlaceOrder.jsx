@@ -98,7 +98,7 @@ const PlaceOrder = () => {
                         <div>
                             <div className='cart-total-details'>
                                 <p>Subtotal</p>
-                                <p>{getTotalAmount()} AUD</p>
+                                <p>${getTotalAmount()}</p>
                             </div>
                             <hr />
                             <div className='cart-total-details'>
@@ -108,7 +108,7 @@ const PlaceOrder = () => {
                             <hr />
                             <div className='cart-total-details'>
                                 <b>Total</b>
-                                <b>{getTotalAmount()} AUD</b>
+                                <b>${getTotalAmount()}</b>
                             </div>
                         </div>
                         <button type='submit'>PROCCED TO PAYMENT</button> 

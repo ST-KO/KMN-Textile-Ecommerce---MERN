@@ -77,7 +77,7 @@ const Orders = ({ serverURL }) => {
               </div>
               
               <p>Items: {order.items.length}</p>
-              <p>{order.amount} AUD</p>
+              <p>${order.amount}</p>
 
               <select onChange={(e) => statusUpdateHandler(e, order._id)} value={order.status}>
                 <option value="Order Processing">Order Processing</option>

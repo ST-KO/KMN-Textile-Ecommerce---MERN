@@ -23,15 +23,15 @@ const CheckOut = ({getTotalAmount}) => {
                     <tbody>
                         <tr>
                             <td>Cart Subtotal</td>
-                            <td>{getTotalAmount} MMK</td>
+                            <td>${getTotalAmount}</td>
                         </tr>
                         <tr>
                             <td>Shipping</td>
-                            <td>0 MMK</td>
+                            <td>$0</td>
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td>{getTotalAmount} MMK</td>
+                            <td>${getTotalAmount}</td>
                         </tr>
                     </tbody>
                 </table>
