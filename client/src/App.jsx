@@ -9,6 +9,8 @@ import Contact from './pages/Contact/Contact';
 import Cart from './pages/Cart/Cart';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import LoginPopup from './components/LoginPopup/LoginPopup';
+import VerifiedPayment from './pages/VerifiedPayment/VerifiedPayment';
+import MyOrders from './pages/MyOrders/MyOrders';
 
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOrder />} />
+          <Route path="/verify" element={<VerifiedPayment />} />
+          <Route path="/myorders" element={<MyOrders />} />
         </Route>
       </Routes>
     </BrowserRouter>

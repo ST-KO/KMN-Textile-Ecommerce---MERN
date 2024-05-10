@@ -52,7 +52,7 @@ const Header = ({ setShowLogin }) => {
                     <ul className='nav-profile-dropdown'>
                         <li>
                             <SlHandbag className='dropdown-icon' />
-                            <p>Orders</p>
+                            <Link to="/myorders"><p>Orders</p></Link>
                         </li>
                         <hr />
                         <li onClick={logOut}>

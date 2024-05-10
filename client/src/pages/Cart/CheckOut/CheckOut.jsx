@@ -12,7 +12,7 @@ const CheckOut = ({getTotalAmount}) => {
             <div id='coupon'>
                 <h3>Apply Coupon</h3>
                 <div>
-                    <input type="text" placeholder='Enter Your Coupon' />
+                    <input name="coupon" type="text" placeholder='Enter Your Coupon' />
                     <button className='normal'>Apply</button>
                 </div>
             </div>
