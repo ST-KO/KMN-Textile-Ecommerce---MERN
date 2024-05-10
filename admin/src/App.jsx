@@ -33,14 +33,15 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login serverURL={serverURL} setToken={setToken} />} />
         {
-          token &&
-          <Route path="/dashboard" element={<Layout token={token} setToken={setToken} />} >
-          <Route path='add' element={<Add serverURL={serverURL} />} />
-          <Route path='list' element={<List serverURL={serverURL} />} />
-          <Route path='list/delete/:id' element={<Delete serverURL={serverURL} />} />
-          <Route path='list/edit/:id' element={<Edit serverURL={serverURL} />} />
-          <Route path='orders' element={<Orders serverURL={serverURL} />} />
-          </Route>
+          token && (
+            <Route path="/dashboard" element={<Layout token={token} setToken={setToken} />} >
+              <Route path='add' element={<Add serverURL={serverURL} />} />
+              <Route path='list' element={<List serverURL={serverURL} />} />
+              <Route path='list/delete/:id' element={<Delete serverURL={serverURL} />} />
+              <Route path='list/edit/:id' element={<Edit serverURL={serverURL} />} />
+              <Route path='orders' element={<Orders serverURL={serverURL} />} />
+            </Route>
+          )
         }
       </Routes>
     </>

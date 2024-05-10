@@ -108,6 +108,7 @@
 
 .navbar-profile-icon{
     font-size: 20px;
+    cursor: pointer;
 }
 
 .navbar-profile-icon:hover{

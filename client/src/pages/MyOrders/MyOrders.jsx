@@ -15,9 +15,12 @@ const MyOrders = () => {
         
         if(response.data.success){
             setData(response.data.data);
-            console.log(response.data.data)
         }
-    }
+    };
+
+    const trackOrderButtonHandler = () => {
+        fetchOrders();
+    };
 
     useEffect(() => {
         if(token){
@@ -55,7 +58,7 @@ const MyOrders = () => {
                                 <p>{order.amount}.00 AUD</p>
                                 <p>Total Items: {order.items.length}</p>
                                 <p><span>&#x25cf;</span> <b>{order.status}</b></p>
-                                <button>Track Order</button>
+                                <button onClick={trackOrderButtonHandler}>Update Status</button>
                             </div>
                         );
                     })
