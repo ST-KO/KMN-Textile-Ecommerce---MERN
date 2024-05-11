@@ -1,7 +1,7 @@
 import cron from "node-cron";
 import axios from "axios";
 
-const backendUrl = process.env.BACKEND_BASE_URL || "http://localhost:4000";
+const backendUrl = process.env.BACKEND_BASE_URL;
 
 const cronSchedule = "*/14 * * * *";
 
