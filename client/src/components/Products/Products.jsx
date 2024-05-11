@@ -36,7 +36,6 @@ const Products = ({ products }) => {
                                         alt="remove icon" 
                                     />
                                     <p>{cartItems[item._id]}</p>
-                                    {/* <p>{cartItems[item._id]}</p> */}
                                     <img 
                                         onClick={() => addToCart(item._id)}
                                         src="/image/add_icon_green.png" 
