@@ -16,8 +16,8 @@ import { useState } from 'react';
 
 const App = () => {
   
-  const serverURL = 'http://localhost:4000/'
-  // const serverURL = process.env.REACT_APP_BASE_URL || 'http://localhost:4000/'
+  // const serverURL = 'http://localhost:4000/'
+  const serverURL = 'http://localhost:4000' || process.env.BACKEND_BASE_URL
   
   const [token, setToken] = useState();
 

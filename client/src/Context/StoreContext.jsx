@@ -5,7 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-    const serverURL = "http://localhost:4000";
+    const serverURL = "http://localhost:4000" || process.env.BACKEND_BASE_URL;
     
     const [token, setToken] = useState("");
     const [productList, setProductList] = useState([]);

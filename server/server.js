@@ -8,6 +8,7 @@ import userRouter from "./routes/userRoute.js";
 import adminRouter from "./routes/adminRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import { cronJob } from "./cron.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -27,6 +28,8 @@ app.use("/api/user", userRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
+
+cronJob.start();
 
 app.get("/", async (req, res) => {
   try {

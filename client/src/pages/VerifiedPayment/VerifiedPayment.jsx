@@ -17,15 +17,15 @@ const VerifiedPayment = () => {
     const { serverURL } = useContext(StoreContext);
     const navigate = useNavigate();
 
-    const verifyPayment = async () => {
-        const response = await axios.post(`${serverURL}/api/order/verify`, { success, orderId });
+    // const verifyPayment = async () => {
+    //     const response = await axios.post(`${serverURL}/api/order/verify`, { success, orderId });
 
-        if(response.data.success){
-            navigate("/myorders");
-        } else {
-            navigate("/");
-        }
-    }
+    //     if(response.data.success){
+    //         navigate("/myorders");
+    //     } else {
+    //         navigate("/");
+    //     }
+    // }
 
     const verify = async () => {
         if(success === "true"){

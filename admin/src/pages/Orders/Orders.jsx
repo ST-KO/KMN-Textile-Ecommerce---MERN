@@ -34,6 +34,10 @@ const Orders = ({ serverURL }) => {
     }
   };
 
+  const deleteButtonHandler = () => {
+
+  };
+
   useEffect(() => {
     fetchAllOrders();
   }, []);
@@ -78,12 +82,20 @@ const Orders = ({ serverURL }) => {
               
               <p>Items: {order.items.length}</p>
               <p>${order.amount}</p>
+              
+              <div className='order-items-sel-but'>
+                <select onChange={(e) => statusUpdateHandler(e, order._id)} value={order.status}>
+                  <option value="Order Processing">Order Processing</option>
+                  <option value="Out For Delivery">Out For Delivery</option>
+                  <option value="Delivered">Delivered</option>
+                </select>
 
-              <select onChange={(e) => statusUpdateHandler(e, order._id)} value={order.status}>
-                <option value="Order Processing">Order Processing</option>
-                <option value="Out For Delivery">Out For Delivery</option>
-                <option value="Delivered">Delivered</option>
-              </select>
+                <button 
+                  onClick={() => console.log('clicked')} 
+                  disabled={order.status === 'Delivered' ? false : true}
+                  className={order.status === 'Delivered' ? "" : "disabled"}
+                >DELETE</button>
+              </div>
             </div>
           ))
         }

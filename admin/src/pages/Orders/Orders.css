@@ -1,6 +1,6 @@
 .order-items{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr ;
     align-items: start;
     gap: 30px;
     border: 1px solid #d25175;
@@ -24,12 +24,33 @@
     margin-bottom: 10px;
 }
 
+.order-items-sel-but{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
 .order-items select{
     background-color: #ffe8e4;
     border: 1px solid #d25175;
     width: max(10vw, 120px);
     padding: 10px;
     outline: none;
+}
+
+.order-items button{
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.disabled{
+    opacity: 0.55;
+    cursor: auto !important;
 }
 
 @media (max-width: 1000px){
@@ -47,4 +68,10 @@
     .order-items img{
         width: 40px;
     }
+
+    .order-items-sel-but{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
 }
