@@ -5,7 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-    const serverURL = "http://localhost:4000" || process.env.REACT_APP_BACKEND_URL;
+    const serverURL = import.meta.env.VITE_APP_BACKEND_URL;
     
     const [token, setToken] = useState("");
     const [productList, setProductList] = useState([]);
