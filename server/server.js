@@ -12,6 +12,7 @@ import { cronJob } from "./cron.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
+cronJob.start();
 
 // Middleware
 app.use(cors());
@@ -28,8 +29,6 @@ app.use("/api/user", userRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
-
-cronJob.start();
 
 app.get("/", async (req, res) => {
   try {
