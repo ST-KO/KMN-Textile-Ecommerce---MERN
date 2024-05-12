@@ -79,7 +79,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 </div>
 
                 <div>
-                    Demo Accout: user@gmail.com / 12345678
+                    <b>Demo Accout: </b>user@gmail.com / 12345678
                 </div>
                 
                 {

@@ -81,4 +81,7 @@
 .place-order-demo-card {
     border: 1px dotted #d654a7;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

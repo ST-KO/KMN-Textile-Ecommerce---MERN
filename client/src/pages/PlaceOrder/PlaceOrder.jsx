@@ -113,7 +113,8 @@ const PlaceOrder = () => {
                         </div>
                         <button type='submit'>PROCCED TO PAYMENT</button> 
                         <div className='place-order-demo-card'>
-                            <b>Demo Stripe Card: </b>4000000360000006 
+                            <span><b>Demo Stripe Card: </b>4000000360000006</span> 
+                            <span>(Please Copy The Number Before Procceding)</span>
                         </div>
                     </div>
                 </div>
