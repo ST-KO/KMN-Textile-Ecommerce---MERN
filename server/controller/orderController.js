@@ -130,6 +130,21 @@ const listOrders = async (req, res) => {
   }
 };
 
+// Deleting orders from admin panel
+const deleteOrder = async (req, res) => {
+  const { orderId } = req.body;
+  try {
+    await orderModel.findByIdAndDelete(orderId);
+
+    res
+      .status(200)
+      .json({ success: true, message: "Order Deleted Successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 // Updating orders' status
 const updateStatus = async (req, res) => {
   const { orderId, status } = req.body;
@@ -153,4 +168,5 @@ export {
   verifyPaymentFail,
   listOrders,
   updateStatus,
+  deleteOrder,
 };

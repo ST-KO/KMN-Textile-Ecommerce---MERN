@@ -11,8 +11,13 @@
 }
 
 .order-item-product, 
-.order-item-name{
+.order-item-name,
+.order-item-id{
     font-weight: 600;
+}
+
+.order-item-id{
+    margin-bottom: 20px;
 }
 
 .order-item-name{
@@ -27,7 +32,7 @@
 .order-items-sel-but{
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 100px;
 }
 
 .order-items select{

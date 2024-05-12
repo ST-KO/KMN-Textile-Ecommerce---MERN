@@ -112,6 +112,9 @@ const PlaceOrder = () => {
                             </div>
                         </div>
                         <button type='submit'>PROCCED TO PAYMENT</button> 
+                        <div className='place-order-demo-card'>
+                            <b>Demo Stripe Card: </b>4000000360000006 
+                        </div>
                     </div>
                 </div>
             </form>

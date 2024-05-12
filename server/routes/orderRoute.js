@@ -2,6 +2,7 @@ import express from "express";
 
 import authMiddleware from "../middleware/auth.js";
 import {
+  deleteOrder,
   listOrders,
   placeOrder,
   updateStatus,
@@ -24,6 +25,8 @@ orderRouter.delete("/verify/fail", verifyPaymentFail);
 orderRouter.get("/userorders", authMiddleware, userOrders);
 
 orderRouter.get("/list", listOrders);
+
+orderRouter.delete("/delete", deleteOrder);
 
 orderRouter.patch("/status", updateStatus);
 

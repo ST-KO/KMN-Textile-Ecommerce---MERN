@@ -80,6 +80,9 @@ const Login = ({ serverURL, setToken }) => {
                         <button type='submit' className='signin-btn'>
                             Sign In
                         </button>
+                        <div>
+                            Demo Accout: admin@gmail.com / 12345678
+                        </div>
                     </form>
                 </div>
             </section>

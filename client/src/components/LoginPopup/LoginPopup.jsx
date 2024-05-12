@@ -4,7 +4,6 @@ import axios from 'axios';
 import { StoreContext } from '../../Context/StoreContext';
 import './LoginPopup.css';
 
-
 const LoginPopup = ({ setShowLogin }) => {
     
     const { serverURL, setToken } = useContext(StoreContext);
@@ -77,6 +76,10 @@ const LoginPopup = ({ setShowLogin }) => {
                 <div className="login-popup-condition">
                     <input type="checkbox" required />
                     <p>By continuing, I agree to the terms of use and privacy policy.</p>
+                </div>
+
+                <div>
+                    Demo Accout: user@gmail.com / 12345678
                 </div>
                 
                 {

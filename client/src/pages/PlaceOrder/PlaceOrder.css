@@ -75,4 +75,10 @@
     border-radius: 4px;
     cursor: pointer;
     margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.place-order-demo-card {
+    border: 1px dotted #d654a7;
+    padding: 10px;
 }
