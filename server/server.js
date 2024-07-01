@@ -12,7 +12,7 @@ import { cronJob } from "./cron.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
-// cronJob.start();
+cronJob.start();
 
 // Middleware
 app.use(cors());
